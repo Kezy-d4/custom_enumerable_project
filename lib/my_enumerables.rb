@@ -14,6 +14,12 @@ module Enumerable
     self.my_each { |elem| arr << elem if yield(elem) }
     arr
   end
+
+  def my_all?
+    arr = []
+    self.my_each { |elem| arr << elem if yield(elem) }
+    arr.length == self.length ? true : false
+  end
 end 
 
 # You will first have to define my_each
@@ -26,7 +32,6 @@ class Array
     for elem in self
       yield(elem)
     end
-
     self
   end
 end
