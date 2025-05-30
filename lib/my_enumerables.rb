@@ -6,7 +6,13 @@ module Enumerable
       yield(elem, idx)
       idx += 1
     end
-    return self
+    self
+  end
+
+  def my_select
+    arr = []
+    self.my_each { |elem| arr << elem if yield(elem) }
+    arr
   end
 end 
 
@@ -21,6 +27,6 @@ class Array
       yield(elem)
     end
 
-    return self
+    self
   end
 end
