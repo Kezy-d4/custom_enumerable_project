@@ -20,6 +20,12 @@ module Enumerable
     self.my_each { |elem| arr << elem if yield(elem) }
     arr.length == self.length ? true : false
   end
+
+  def my_any?
+    arr = []
+    self.my_each { |elem| arr << elem if yield(elem) }
+    arr.length.zero? ? false : true
+  end
 end 
 
 # You will first have to define my_each
