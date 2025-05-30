@@ -2,11 +2,10 @@ module Enumerable
   # Your code goes here
   def my_each_with_index
     idx = 0
-    for elem in self
+    self.my_each do |elem|
       yield(elem, idx)
       idx += 1
     end
-
     return self
   end
 end 
