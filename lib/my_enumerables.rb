@@ -32,6 +32,14 @@ module Enumerable
     self.my_each { |elem| arr << elem if yield(elem) }
     arr.length.positive? ? false : true
   end
+
+  def my_count
+    return self.size unless block_given?
+
+    arr = []
+    self.my_each { |elem| arr << elem if yield(elem) }
+    arr.length
+  end
 end 
 
 # You will first have to define my_each
