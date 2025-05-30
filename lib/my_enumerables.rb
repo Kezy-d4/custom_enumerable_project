@@ -40,6 +40,12 @@ module Enumerable
     self.my_each { |elem| arr << elem if yield(elem) }
     arr.length
   end
+
+  def my_map
+    arr = []
+    self.my_each { |elem| arr << yield(elem) }
+    arr
+  end
 end 
 
 # You will first have to define my_each
