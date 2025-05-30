@@ -1,6 +1,15 @@
 module Enumerable
   # Your code goes here
-end
+  def my_each_with_index
+    idx = 0
+    for elem in self
+      yield(elem, idx)
+      idx += 1
+    end
+
+    return self
+  end
+end 
 
 # You will first have to define my_each
 # on the Array class. Methods defined in
